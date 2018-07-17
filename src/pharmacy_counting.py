@@ -35,7 +35,7 @@ def read_file(filename, batch_size=1024):
                     # create a dict with drug_names, num_prescriber, total_cost, name and last_name if it does not exis
                     if cells[-2] not in cols:
                         cols[cells[-2]]=dict({'num_prescriber':1, 'total_cost':cells[-1], 
-                                              'name': cells[1], 'last_name':cells[2]})
+                                              'name':cells[2], 'last_name':cells[1]})
 
                     # Count the number of prescriber for UNIQUE individuals
                     
