@@ -47,11 +47,14 @@ def read_file(filename, batch_size=1024):
                         cols[cells[-2]]['total_cost']=update
 
                         # is the same person if two lines share the same prescriber first and last names
-                        if cols[cells[-2]]['name'] != cells[1] and cols[cells[-2]]['last_name'] != cells[2]:
+                        if cols[cells[-2]]['name'] != cells[2] and cols[cells[-2]]['last_name'] != cells[1]:
                             cols[cells[-2]]['num_prescriber']=count+1
 
                         else:
                             cols[cells[-2]]['num_prescriber']=count
+                            
+                        cols[cells[-2]]['name']= cells[2]
+                        cols[cells[-2]]['last_name']= cells[1]
 
             data = f.readlines(batch_size)
     
