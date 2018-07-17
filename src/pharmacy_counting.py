@@ -91,6 +91,7 @@ if __name__ == '__main__':
             filein = os.path.join(filename, 'input', item)
             try:
                 mydata = read_file(filein)
+                print('{} was processed'.format(item))
                 # create a output directory is it does not exist
                 output_dir = os.path.join(filename, 'output')
                 if not os.path.exists(output_dir):
